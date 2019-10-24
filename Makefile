@@ -19,6 +19,7 @@ $(NAME):
 
 clean:
 		@rm -f $(OBJS)
+		@rm -f $(OBJ_DIR)
 
 fclean: clean
 		@rm -f $(NAME)
