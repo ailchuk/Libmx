@@ -5,8 +5,7 @@ RANLIB = ranlib
 
 NAME = libmx.a
 HEAD = libmx.h
-SRC_DIR = src
-OBJ_DIR = @mkdir obj
+
 SRCS = $(SRC_DIR) mx_printchar.c
 
 OBJS = $(SRCS:.c = OBJ_DIR:.o)
@@ -20,7 +19,6 @@ $(NAME):
 
 clean:
 		@rm -f $(OBJS)
-		@rm -f $(OBJ_DIR)
 
 fclean: clean
 		@rm -f $(NAME)
