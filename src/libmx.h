@@ -25,14 +25,14 @@ int mx_quicksort(char **arr, int left, int right); // NONE
 void mx_swap_char(char *s1, char *s2);
 void mx_str_reverse(char *s); // #KK
 void mx_strdel(char **str); // #KK 
-void mx_del_strarr(char ***arr); // NONE
-int mx_get_char_index(const char *str, char c); // NONE
+void mx_del_strarr(char ***arr); // #KK CHECK LATER!
+int mx_get_char_index(const char *str, char c); // #KK but TEST IT
 char *mx_strdup(const char *s1);
 char *mx_strndup(const char *s1, size_t n); // NONE
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strnew(const int size);
-// char *mx_strcat(char *restrict s1, const char *restrict s2); // NONE
+char *mx_strcat(char *restrict s1, const char *restrict s2); // #KK
 // char *mx_strstr(const char *haystack, const char *needle); // NONE
 // int mx_get_substr_index(const char *str, const char *sub); // NONE
 // int mx_count_substr(const char *str, const char *sub); // NONE 
