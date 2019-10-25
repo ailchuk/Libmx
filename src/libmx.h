@@ -4,12 +4,13 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 void mx_printchar(char c);
 void mx_print_unicode(wchar_t c); // NONE
 void mx_printstr(const char *s);
 int mx_strlen(const char *s);
-void mx_print_strarr(char **arr, const char *delim); // NONE
+void mx_print_strarr(char **arr, const char *delim); // #KK
 void mx_printint(int n);
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
@@ -22,8 +23,8 @@ int mx_strcmp(const char *s1, const char *s2);
 int mx_bubble_sort(char **arr, int size);
 int mx_quicksort(char **arr, int left, int right); // NONE
 void mx_swap_char(char *s1, char *s2);
-void mx_str_reverse(char *s); // CHECK LATER
-void mx_strdel(char **str); // NONE 
+void mx_str_reverse(char *s); // #KK
+void mx_strdel(char **str); // #KK 
 void mx_del_strarr(char ***arr); // NONE
 int mx_get_char_index(const char *str, char c); // NONE
 char *mx_strdup(const char *s1);
@@ -31,33 +32,33 @@ char *mx_strndup(const char *s1, size_t n); // NONE
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strnew(const int size);
-char *mx_strcat(char *restrict s1, const char *restrict s2); // NONE
-char *mx_strstr(const char *haystack, const char *needle); // NONE
-int mx_get_substr_index(const char *str, const char *sub); // NONE
-int mx_count_substr(const char *str, const char *sub); // NONE 
-int mx_count_words(const char *str, char delimiter); // NONE
-char *mx_strtrim(const char *str); // NONE
-char *mx_del_extra_spaces(const char *str); // NONE
-char **mx_strsplit(const char *s, char c); // NONE
-char *mx_strjoin(const char *s1, const char *s2); // NONE
-char *mx_file_to_str(const char *file); // NONE
-int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
-char *mx_replace_substr(const char *str, const char *sub, const char *replace); // NONE
-void *mx_memset(void *b, int c, size_t len); // NONE
-void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n); // NONE
-void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n); // NONE
-int mx_memcmp(const void *s1, const void *s2, size_t n); // NONE
-void *mx_memchr(const void *s, int c, size_t n); // NONE
-void *mx_memrchr(const void *s, int c, size_t n // NONE
-void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len); // NONE
-void *mx_memmove(void *dst, const void *src, size_t len); // NONE
-void *mx_realloc(void *ptr, size_t size); // NONE
-t_list *mx_create_node(void *data); // NONE
-void mx_push_front(t_list **list, void *data); // NONE
-void mx_push_back(t_list **list, void *data); // NONE
-void mx_pop_front(t_list **head); // NONE
-void mx_pop_back(t_list **head); // NONE
-int mx_list_size(t_list *list)); // NONE
-t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // NONE
+// char *mx_strcat(char *restrict s1, const char *restrict s2); // NONE
+// char *mx_strstr(const char *haystack, const char *needle); // NONE
+// int mx_get_substr_index(const char *str, const char *sub); // NONE
+// int mx_count_substr(const char *str, const char *sub); // NONE 
+// int mx_count_words(const char *str, char delimiter); // NONE
+// char *mx_strtrim(const char *str); // NONE
+// char *mx_del_extra_spaces(const char *str); // NONE
+// char **mx_strsplit(const char *s, char c); // NONE
+// char *mx_strjoin(const char *s1, const char *s2); // NONE
+// char *mx_file_to_str(const char *file); // NONE
+// int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
+// char *mx_replace_substr(const char *str, const char *sub, const char *replace); // NONE
+// void *mx_memset(void *b, int c, size_t len); // NONE
+// void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n); // NONE
+// void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n); // NONE
+// int mx_memcmp(const void *s1, const void *s2, size_t n); // NONE
+// void *mx_memchr(const void *s, int c, size_t n); // NONE
+// void *mx_memrchr(const void *s, int c, size_t n) // NONE
+// void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len); // NONE
+// void *mx_memmove(void *dst, const void *src, size_t len); // NONE
+// void *mx_realloc(void *ptr, size_t size); // NONE
+// t_list *mx_create_node(void *data); // NONE
+// void mx_push_front(t_list **list, void *data); // NONE
+// void mx_push_back(t_list **list, void *data); // NONE
+// void mx_pop_front(t_list **head); // NONE
+// void mx_pop_back(t_list **head); // NONE
+// int mx_list_size(t_list *list)); // NONE
+// t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // NONE
 
 #endif

@@ -1,0 +1,2 @@
+str = "game over";
+mx_str_reverse(str); //'str' now is "revo emag"
