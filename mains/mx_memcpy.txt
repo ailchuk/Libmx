@@ -1,0 +1,9 @@
+int main()
+{
+    char buf1[50], buf2[50];
+    strcpy(buf1, "When, in the course of...");
+    
+    memcpy(buf2, buf1, 5);
+    puts(buf2);
+
+}

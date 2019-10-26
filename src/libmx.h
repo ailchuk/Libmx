@@ -44,9 +44,9 @@ char *mx_strcat(char *restrict s1, const char *restrict s2); // #KK
 // char *mx_file_to_str(const char *file); // NONE
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
 // char *mx_replace_substr(const char *str, const char *sub, const char *replace); // NONE
-// void *mx_memset(void *b, int c, size_t len); // NONE
-// void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n); // NONE
-// void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n); // NONE
+void *mx_memset(void *b, int c, size_t len); // KK
+void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n); // KK
+void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n); // NONE
 // int mx_memcmp(const void *s1, const void *s2, size_t n); // NONE
 // void *mx_memchr(const void *s, int c, size_t n); // NONE
 // void *mx_memrchr(const void *s, int c, size_t n) // NONE
