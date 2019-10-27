@@ -65,11 +65,11 @@ typedef struct s_list
 } t_list;
 
 t_list *mx_create_node(void *data); // NONE
-void mx_push_front(t_list **list, void *data); // NONE
-void mx_push_back(t_list **list, void *data); // NONE
-// void mx_pop_front(t_list **head); // NONE
-// void mx_pop_back(t_list **head); // NONE
-// int mx_list_size(t_list *list); // NONE
+void mx_push_front(t_list **list, void *data); // KK
+void mx_push_back(t_list **list, void *data); // KK
+void mx_pop_front(t_list **head); // HZ CHECK IT
+void mx_pop_back(t_list **head); // HZ CHECK IT
+int mx_list_size(t_list *list); // KK 
 // t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // NONE
 
 

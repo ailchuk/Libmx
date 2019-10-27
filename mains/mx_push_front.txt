@@ -1,16 +1,30 @@
+
+// Func to display node!!
+
+void display(t_list *head)
+{
+    while (head != NULL)
+    {
+        printf("%s   ", head->data);
+        head = head->next;
+    }
+    printf("\n");
+}
+
 int main() 
 {
     t_list listok = *mx_create_node("HellO");
-    listok.next = mx_create_node("hi");
-
-    printf("%s\n", listok.data);    
-    printf("%s\n", listok.next->data);
-
-    puts("\t\t PUSHED FRONT\n");
-
-    mx_push_front(&listok.next, listok.data);
-    printf("%s\n", listok.data);    
-    printf("%s\n", listok.next->data);
-
+    listok.next = mx_create_node("Hi");
+    listok.next->next = mx_create_node("KO");
+    puts("1"); 
+    display(&listok);
+    puts("2");
+    mx_push_front(&listok.next, "Triii");
+    display(&listok);
+    puts("3");
+    mx_push_back(&listok.next->next, "qweqwe");
+    display(&listok);
+    mx_push_front(&listok.next->next->next, "Hiiiii222ii");
+   display(&listok);
 
 }
