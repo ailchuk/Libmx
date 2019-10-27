@@ -1,0 +1,16 @@
+int main() 
+{
+    t_list listok = *mx_create_node("HellO");
+    listok.next = mx_create_node("hi");
+
+    printf("%s\n", listok.data);    
+    printf("%s\n", listok.next->data);
+
+    puts("\t\t PUSHED FRONT\n");
+
+    mx_push_front(&listok.next, listok.data);
+    printf("%s\n", listok.data);    
+    printf("%s\n", listok.next->data);
+
+
+}
