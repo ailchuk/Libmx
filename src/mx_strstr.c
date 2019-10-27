@@ -21,12 +21,3 @@ char *mx_strstr(const char *haystack, const char *needle)
     }
     return NULL;
 }
-
-int main()
-{
-    char *str = "Hello world! I see";
-    char *cmp = "I ";
-
-    puts(mx_strstr(str, cmp));
-}
-

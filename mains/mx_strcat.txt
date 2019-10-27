@@ -1,4 +1,3 @@
-
 int main () {
    char src[50];
    char dest[50];

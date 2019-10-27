@@ -34,8 +34,8 @@ char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strnew(const int size);
 char *mx_strcat(char *restrict s1, const char *restrict s2); // #KK
 char *mx_strstr(const char *haystack, const char *needle); // KK TEST IT OR REWRITE!!!!!!!!
-// int mx_get_substr_index(const char *str, const char *sub); // NONE
-// int mx_count_substr(const char *str, const char *sub); // NONE 
+int mx_get_substr_index(const char *str, const char *sub); // KK
+int mx_count_substr(const char *str, const char *sub); // NONE 
 int mx_count_words(const char *str, char delimiter); // test it!!!! and change!
 // char *mx_strtrim(const char *str); // NONE
 // char *mx_del_extra_spaces(const char *str); // NONE
@@ -45,7 +45,7 @@ int mx_count_words(const char *str, char delimiter); // test it!!!! and change!
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
 // char *mx_replace_substr(const char *str, const char *sub, const char *replace); // NONE
 
-// #memory 
+// #memory pack
 
 void *mx_memset(void *b, int c, size_t len); // KK but test it
 void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n); // KK

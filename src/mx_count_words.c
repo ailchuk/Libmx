@@ -22,11 +22,3 @@ int mx_count_words(const char *str, char delimiter) {
     }
     return counter;
 }
-
-int main() 
-{
-    char *str = " follow * the white rabbit ";
-printf("%d\n", mx_count_words(str, '*')); //returns 2
-printf("%d\n", mx_count_words(str, ' ')); //returns 5
-printf("%d\n", mx_count_words(NULL, ' ')); //returns -1
-}
