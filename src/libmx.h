@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <mm_malloc.h>
 
 void mx_printchar(char c);
 void mx_print_unicode(wchar_t c); // NONE
@@ -41,7 +42,7 @@ int mx_count_words(const char *str, char delimiter); // test it!!!! and change!
 // char *mx_del_extra_spaces(const char *str); // NONE
 // char **mx_strsplit(const char *s, char c); // NONE
 char *mx_strjoin(const char *s1, const char *s2); // #KK
-// char *mx_file_to_str(const char *file); // NONE
+char *mx_file_to_str(const char *file); // KK BUT CHECK it
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
 // char *mx_replace_substr(const char *str, const char *sub, const char *replace); // NONE
 
