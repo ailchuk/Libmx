@@ -1,0 +1,13 @@
+int main()
+{
+    char string [] = "gutenmorgenow";
+    // char *third, *fourth;
+    char st[] = "stackoverfare";
+    // third = string;
+    // fourth = st;
+
+    // printf("%s\n", mx_memmove(third, fourth, 5));
+    // printf("%s\n", memmove(third, fourth, 5));
+    printf("%s\n", mx_memmove(string, st, 1));
+    printf("%s\n", memmove(string, st, 1));
+}

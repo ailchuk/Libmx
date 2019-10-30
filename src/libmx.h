@@ -50,9 +50,9 @@ char *mx_strtrim(const char *str); // KK 1 leak :c
 char *mx_del_extra_spaces(const char *str); // kk 1 LEAK!
 char **mx_strsplit(const char *s, char c); // check it
 char *mx_strjoin(const char *s1, const char *s2); // #KK
-char *mx_file_to_str(const char *file); // KK BUT CHECK it
+// char *mx_file_to_str(const char *file); // KK BUT CHECK it
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
-// char *mx_replace_substr(const char *str, const char *sub, const char *replace); // NONE
+char *mx_replace_substr(const char *str, const char *sub, const char *replace); // KK 2 leaks!!!
 
 // #memory pack
 
@@ -63,7 +63,7 @@ int mx_memcmp(const void *s1, const void *s2, size_t n); // KK
 void *mx_memchr(const void *s, int c, size_t n); // KK
 void *mx_memrchr(const void *s, int c, size_t n); // KK
 // void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len); // NONE
-// void *mx_memmove(void *dst, const void *src, size_t len); // NONE
+void *mx_memmove(void *dst, const void *src, size_t len); // done! KK
 void *mx_realloc(void *ptr, size_t size); // KK check it! 
 
 // #list pack
