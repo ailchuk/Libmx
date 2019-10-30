@@ -29,7 +29,7 @@ char **mx_strsplit(const char *s, char c)
 int main()
 {
     char *s = "**Good bye,**Mr.*Anderson.****";
-    char **arr = mx_strsplit(s, '*'); // arr = ["Good bye,", "Mr.", "Anderson."]
+    char **arr = mx_strsplit(s, 'q'); // arr = ["Good bye,", "Mr.", "Anderson."]
     for (int i = 0; i < 3; i++)
     {
         printf("|%s|", arr[i]);

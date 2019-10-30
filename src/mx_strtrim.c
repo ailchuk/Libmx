@@ -9,7 +9,8 @@ char *mx_strtrim(const char *str)
     int size;
     char *target = NULL;
 
-    if (!str)   return NULL;
+    if (!str)   
+        return NULL;
     while (mx_isspace(str[++i]))
         start++;
     i = len;
@@ -25,9 +26,9 @@ char *mx_strtrim(const char *str)
     
 }
 
-// int main()
-// {
-//     char *name = "\f My name... is Neo \t\n ";
-//     printf("%s\n", mx_strtrim(name)); //returns "My name... is Neo"
+int main()
+{
+    char *name = "       ";
+   mx_strtrim(name); //returns "My name... is Neo"
 // system("leaks a.out");
-// }
+}

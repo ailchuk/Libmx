@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <mm_malloc.h>
+#include <fcntl.h>
 
 bool mx_isspace(char c); // KK
 
@@ -45,12 +46,12 @@ char *mx_strcat(char *restrict s1, const char *restrict s2); // #KK
 char *mx_strstr(const char *haystack, const char *needle); // KK TEST IT OR REWRITE!!!!!!!!
 int mx_get_substr_index(const char *str, const char *sub); // KK
 int mx_count_substr(const char *str, const char *sub); // check 
-int mx_count_words(const char *str, char delimiter); // test it!!!! and change!
-char *mx_strtrim(const char *str); // KK 1 leak :c 
+int mx_count_words(const char *str, char delimiter); // KK
+// char *mx_strtrim(const char *str); // rewrite !!!!!!!!!!!!!!!
 char *mx_del_extra_spaces(const char *str); // kk 1 LEAK!
-char **mx_strsplit(const char *s, char c); // check it
+char **mx_strsplit(const char *s, char c); // do not works :c if c == null;
 char *mx_strjoin(const char *s1, const char *s2); // #KK
-// char *mx_file_to_str(const char *file); // KK BUT CHECK it
+// char *mx_file_to_str(const char *file); // NONE
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
 char *mx_replace_substr(const char *str, const char *sub, const char *replace); // KK 2 leaks!!!
 
@@ -62,7 +63,7 @@ void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
 int mx_memcmp(const void *s1, const void *s2, size_t n); // KK
 void *mx_memchr(const void *s, int c, size_t n); // KK
 void *mx_memrchr(const void *s, int c, size_t n); // KK
-// void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len); // NONE
+void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len); // KK
 void *mx_memmove(void *dst, const void *src, size_t len); // done! KK
 void *mx_realloc(void *ptr, size_t size); // KK check it! 
 
