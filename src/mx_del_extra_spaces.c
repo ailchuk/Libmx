@@ -29,18 +29,17 @@ char *mx_del_extra_spaces(const char *str)
 		j++;
 	}
 	target[i] = '\0';
-	if (target == NULL) {
+	if (target == NULL)
 		return NULL;
-	}
+	free(target);
 	return target;
 }
 
 int main()
 {
     char *name = "\f My name... is \r Neo \t\n ";
-    //printf("%s", mx_del_extra_spaces(name)); //returns "My name... is Neo" 
-    char *arr = mx_del_extra_spaces(name);
-    printf("%s", arr);
-    system("leaks a.out");
+    printf("%s", mx_del_extra_spaces(name)); //returns "My name... is Neo" 
+    //char *arr = mx_del_extra_spaces(name);
+    //printf("%s", arr);
     
 }

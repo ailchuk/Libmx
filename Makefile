@@ -1,27 +1,40 @@
-CC = clang
-CFLAGS = -Wall -Wextra -Werror -Wpedantic
-AR = ar rc
-RANLIB = ranlib
+.PHONY:	all clean fclean re
 
-NAME = libmx.a
-HEAD = libmx.h
+CC 		= clang
 
-SRCS = $(SRC_DIR) mx_printchar.c
+FLAGS 	= -Wall -Werror -Wpedantic -Wextra
 
-OBJS = $(SRCS:.c = OBJ_DIR:.o)
+NAME 	= libmx.a
+
+INC 	= inc/libmx.h
+
+SRCDIR 	= src/
+
+SRC 	= mx_printchar.c mx_printint.c mx_printstr.c
+
+OBJDIR 	= obj/
+
+OBJ = $(addprefix $(OBJDIR), $(SRC:.c=.o))
 
 all: $(NAME)
 
-$(NAME):
-		@$(CC) $(CFLAGS) -c $(SRCS)
-		@$(AR) $(NAME) $(OBJS)
-		@$(RANLIB) $(NAME)
+$(NAME): $(OBJDIR) $(OBJ)
+		@echo "\033[45mcreating \033[0m"
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
+
+$(OBJDIR):
+		@mkdir $(OBJDIR)
+
+$(OBJ): $(OBJDIR)%.o : $(SRCDIR)%.c
+	@$(CC) $(FLAGS) -I $(INC) -c $< -o $@
 
 clean:
-		@rm -f $(OBJS)
-		@rm -f $(OBJ_DIR)
+	@echo "\033[31mUEBALI obj \033[0m"
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-		@rm -f $(NAME)
+	@echo "\033[31mnahooi lib \033[0m"
+	@rm -f $(NAME)
 
-re:		fclean all
+re: fclean all
