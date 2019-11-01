@@ -21,6 +21,6 @@ char *mx_strtrim(const char *str)
         trailing++;
     result = mx_strnew(length - leading - trailing);
     mx_strncpy(result, str + leading, length - leading - trailing);
-    free(result);
     return result;
 }
+

@@ -22,10 +22,10 @@ double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
 // char *mx_nbr_to_hex(unsigned long nbr); // NONE
 unsigned long mx_hex_to_nbr(const char *hex);
-// char *mx_itoa(int number); // NONE
-void mx_foreach(int *arr, int size, void (*f)(int));
-int mx_binary_search(char **arr, int size, const char *s, int *count);
-int mx_bubble_sort(char **arr, int size);
+char *mx_itoa(int number); // KK
+void mx_foreach(int *arr, int size, void (*f)(int)); // KK
+int mx_binary_search(char **arr, int size, const char *s, int *count); // KK
+int mx_bubble_sort(char **arr, int size); // KK
 // int mx_quicksort(char **arr, int left, int right); // NONE
 
 // STRING pack 
@@ -47,7 +47,7 @@ char *mx_strstr(const char *haystack, const char *needle); // KK TEST IT OR REWR
 int mx_get_substr_index(const char *str, const char *sub); // KK
 int mx_count_substr(const char *str, const char *sub); // check 
 int mx_count_words(const char *str, char delimiter); // KK
-char *mx_strtrim(const char *str); // rewrite !!!!!!!!!!!!!!!
+char *mx_strtrim(const char *str); // check leaks
 char *mx_del_extra_spaces(const char *str); // kk 1 LEAK!
 char **mx_strsplit(const char *s, char c); // do not works :c if c == null;
 char *mx_strjoin(const char *s1, const char *s2); // #KK

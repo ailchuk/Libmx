@@ -18,6 +18,7 @@ char *mx_del_extra_spaces(const char *str)
 	}
 	str = mx_strtrim(str);
 	target = mx_strnew(length - 1);
+	// free(target);
 	while (str[i]) {
 		target[j] = str[i];
 		if (mx_isspace(str[i])) {
@@ -31,7 +32,6 @@ char *mx_del_extra_spaces(const char *str)
 	target[i] = '\0';
 	if (target == NULL)
 		return NULL;
-	free(target);
 	return target;
 }
 

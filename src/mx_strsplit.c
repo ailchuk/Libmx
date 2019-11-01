@@ -1,4 +1,5 @@
 #include "libmx.h"
+
 char **mx_strsplit(const char *s, char c)
 {
   if (!s || mx_get_char_index(s, c) == -1)

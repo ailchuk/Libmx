@@ -29,5 +29,4 @@ int main()
 {
     printf("%s\n", mx_replace_substr("McDonalds", "alds", "uts")); //returns "McDonuts"
     printf("%s\n", mx_replace_substr("Ururu turu", "ru", "ta")); //returns "Utata tuta"
-system("leaks a.out");
 }
