@@ -2,11 +2,21 @@
 
 void mx_pop_front(t_list **head)
 {
-    t_list *node = *head;
-
-	*head = node->next;
-	free(node);
-	node->next = NULL;
+    if (head == NULL) return;
+    
+    if((*head)->next == NULL)
+    {
+        free(*head);
+        *head = NULL;
+        return;
+    }
+    else
+    {
+        t_list *ptr = (*head)->next;
+        free(*head);
+        *head = ptr;
+    }
+    
 }
 
 // Func to display node!!
@@ -23,11 +33,11 @@ void display(t_list *head)
 
 int main() 
 {
-    t_list list = *mx_create_node("Hello");
-    list.next = mx_create_node("Hi");
-    list.next->next = mx_create_node("GOOD");
-    display(&list);
+    t_list *list = mx_create_node("Hello");
+    list->next = mx_create_node("Hi");
+    list->next->next = mx_create_node("GOOD");
+    display(list);
 
-    mx_pop_front(&list.next->next);
-    display(&list);
+    mx_pop_front(&list);
+    display(list);
 }
