@@ -1,16 +1,16 @@
 #include "libmx.h"
 
-char *mx_strtrim(const char *str) 
+char *mx_strtrim(const char *str)
 {
 
     if (!str)
-     return NULL;
+        return NULL;
     int leading = 0;
     int trailing = 0;
     int i;
     int length = mx_strlen(str);
     char *result;
-    
+
     for (i = 0; mx_isspace(str[i]); i++)
     {
         leading++;
@@ -24,3 +24,12 @@ char *mx_strtrim(const char *str)
     return result;
 }
 
+int main()
+{
+    //char *name = "\f My name... is \r Neo \t\n ";
+    char *name = "     ";
+    printf("%s", mx_del_extra_spaces(name)); //returns "My name... is Neo" 
+    //char *arr = mx_del_extra_spaces(name);
+    //printf("%s", arr);
+    system("leaks a.out");
+}

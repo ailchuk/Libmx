@@ -6,7 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include <mm_malloc.h>
+#include <memory.h>
+#include <malloc/malloc.h>
 #include <fcntl.h>
 
 bool mx_isspace(char c); // KK
@@ -35,9 +36,9 @@ void mx_swap_char(char *s1, char *s2);
 void mx_str_reverse(char *s); // #KK
 int mx_strcmp(const char *s1, const char *s2);
 void mx_strdel(char **str); // #KK 
-void mx_del_strarr(char ***arr); // #KK CHECK LATER!
-int mx_get_char_index(const char *str, char c); // #KK but TEST IT
-char *mx_strdup(const char *s1);
+void mx_del_strarr(char ***arr); // #KK
+int mx_get_char_index(const char *str, char c); // #KK
+char *mx_strdup(const char *s1); // KK
 char *mx_strndup(const char *s1, size_t n); // KK 
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strncpy(char *dst, const char *src, int len);
@@ -51,7 +52,7 @@ char *mx_strtrim(const char *str); // check leaks
 char *mx_del_extra_spaces(const char *str); // kk 1 LEAK!
 char **mx_strsplit(const char *s, char c); // #KK
 char *mx_strjoin(const char *s1, const char *s2); // #KK
-char *mx_file_to_str(const char *file); // sprosit za liki (nuzhno free ili ne);
+char *mx_file_to_str(const char *file); // #KK
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
 char *mx_replace_substr(const char *str, const char *sub, const char *replace); // KK 2 leaks!!!
 

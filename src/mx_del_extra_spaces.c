@@ -31,10 +31,11 @@ char *mx_del_extra_spaces(const char *str)
 	return target;
 }
 
-int main()
-{
-    char *name = "\f My name... is \r Neo \t\n ";
-    printf("%s", mx_del_extra_spaces(name)); //returns "My name... is Neo" 
-    //char *arr = mx_del_extra_spaces(name);
-    //printf("%s", arr);
-}
+// int main()
+// {
+//     char *name = "\f My name... is \r Neo \t\n ";
+//     printf("%s", mx_del_extra_spaces(name)); //returns "My name... is Neo" 
+//     //char *arr = mx_del_extra_spaces(name);
+//     //printf("%s", arr);
+// 	system("leaks a.out");
+// }

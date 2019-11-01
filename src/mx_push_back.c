@@ -18,7 +18,7 @@ void mx_push_back(t_list **list, void *data)
         last->next = new;
     }
 }
-
+// Need to free mem???
 // Func to display node!!
 
 void display(t_list *head)
