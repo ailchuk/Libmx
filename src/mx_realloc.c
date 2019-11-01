@@ -2,30 +2,15 @@
 
 void *mx_realloc(void *ptr, size_t size)
 {
-    void *buf = malloc(size);
+    if (!ptr)
+        return malloc(size);
+    if (size < 0)
+        return NULL;
+    char *buf = malloc(size);
 
     if(buf) 
-        mx_memcpy(buf, ptr, size);
-    
+        mx_memcpy(buf, (char *)ptr, malloc_size(ptr));
     free(ptr);
-
     return buf;
 
-}
-
-int main() 
-{
-    char *buffer = malloc(100);
-
-    if(buffer) {
-
-        printf("Memory allocated successfully.\n");
-
-        buffer = mx_realloc(buffer, 1024);
-
-        printf("memory copied successfully.\n");
-
-        free(buffer);
-    }
-system("leaks a.out");
 }

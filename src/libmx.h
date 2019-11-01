@@ -49,7 +49,7 @@ int mx_count_substr(const char *str, const char *sub); // check
 int mx_count_words(const char *str, char delimiter); // KK
 char *mx_strtrim(const char *str); // check leaks
 char *mx_del_extra_spaces(const char *str); // kk 1 LEAK!
-char **mx_strsplit(const char *s, char c); // do not works :c if c == null;
+char **mx_strsplit(const char *s, char c); // #KK
 char *mx_strjoin(const char *s1, const char *s2); // #KK
 char *mx_file_to_str(const char *file); // sprosit za liki (nuzhno free ili ne);
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
@@ -68,20 +68,19 @@ void *mx_memmove(void *dst, const void *src, size_t len); // done! KK
 void *mx_realloc(void *ptr, size_t size); // KK check it! 
 
 // #list pack
+
 typedef struct s_list
 {
     void *data;
     struct s_list *next;
 } t_list;
 
-t_list *mx_create_node(void *data); // KK 100 
-void mx_push_front(t_list **list, void *data); // KK 100
-void mx_push_back(t_list **list, void *data); // KK ? check
+t_list *mx_create_node(void *data); // KK
+void mx_push_front(t_list **list, void *data); // KK
+void mx_push_back(t_list **list, void *data); // KK
 void mx_pop_front(t_list **head); // KK
 void mx_pop_back(t_list **head); // KK
 int mx_list_size(t_list *list); // KK 
-// t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // CHECK!
-
-
+t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // CHECK!!!!
 
 #endif

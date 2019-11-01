@@ -1,8 +1,8 @@
 #include "libmx.h"
 
-char **mx_strsplit(const char *s, char c)
+char **mx_strsplit(const char *s, char c) 
 {
-  if (!s || mx_get_char_index(s, c) == -1)
+    if (!s || mx_get_char_index(s, c) == -1)
       return NULL;
 
   int size_arr = mx_count_words(s, c);
@@ -25,24 +25,4 @@ char **mx_strsplit(const char *s, char c)
   }
   arr[size_arr] = NULL;
   return arr;
-}
-
-int main()
-{
-    char *s = "**Good bye,**Mr.*Anderson.****";
-    char **arr = mx_strsplit(s, 'q'); // arr = ["Good bye,", "Mr.", "Anderson."]
-    for (int i = 0; i < 3; i++)
-    {
-        printf("|%s|", arr[i]);
-    }
-    puts("\n\n");
-
-    char *s1 = " Knock, knock, Neo. ";
-    char **arr1 = mx_strsplit(s1, ' '); // arr = ["Knock,", "knock,", "Neo."]
-     for (int i = 0; i < 3; i++)
-    {
-        printf("|%s|", arr1[i]);
-    }
-    puts("\n\n");
-    system("leaks a.out");
 }
