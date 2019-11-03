@@ -23,12 +23,3 @@ void display(t_list *head)
     }
     printf("\n");
 }
-
-int main() 
-{
-    t_list *list = mx_create_node("Hello");
-    list->next = mx_create_node("Hi");
-    list->next->next = mx_create_node("GOOD");
-    display(list);
-    printf("%d\n", mx_list_size(list));
-}

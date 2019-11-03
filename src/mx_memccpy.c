@@ -9,8 +9,17 @@ void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
     {
         *dst1 = *src1;
         if (*src1 == (char)c)
-            return (dst1 + 1);
-            
+            return (dst1 + 1);       
     }
-    return NULL;
+    return 0;
+}
+
+int main () {
+     // Массив источник данных
+   char src[15] = "1234567890";
+
+   // Массив приемник данных
+   char dst[15] = "";
+
+    printf("%s\n", mx_memccpy(dst, src, '5', 10));
 }
