@@ -1,6 +1,0 @@
-int main() 
-{
-    char *arr[] = {"Hello","Hello", "Hello", NULL};
-    char delim = 'Q';
-    mx_print_strarr(arr, &delim);
-}

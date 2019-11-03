@@ -2,15 +2,20 @@
 
 void *mx_realloc(void *ptr, size_t size)
 {
-    if (!ptr)
-        return malloc(size);
-    if (size < 0)
-        return NULL;
-    char *buf = malloc(size);
+    char *buf = NULL;
 
-    if(buf) 
-        mx_memcpy(buf, (char *)ptr, malloc_size(ptr));
+    if (!size && ptr) {
+        free(ptr);
+        buf = malloc(malloc_size(NULL));
+        mx_memcpy(buf, "", 16);
+        return buf;
+    }
+    if (size && !ptr) {
+        buf = malloc(size * sizeof(char));
+        return buf;
+    }
+    buf = malloc(size * sizeof(char));
+    mx_memcpy(buf, ptr, malloc_size(ptr));
     free(ptr);
     return buf;
-
 }

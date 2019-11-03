@@ -1,8 +1,0 @@
-int main() 
-{
-    char *s = NULL;
-    printf("%d\n", mx_get_char_index(s, 'h'));
-    printf("%d\n", mx_get_char_index(s, 'W')); // Ok
-    printf("%d\n", mx_get_char_index(s, 'k'));
-
-}

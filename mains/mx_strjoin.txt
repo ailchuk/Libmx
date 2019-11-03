@@ -1,9 +1,0 @@
-int main() 
-{
-    char *str1 = "this";
-    char *str2 = "dodge ";
-    char *str3 = NULL;
-printf("%s\n", mx_strjoin(str2, str1)); //returns "dodge this"
-printf("%s\n", mx_strjoin(str1, str3)); //returns "this"
-printf("%s\n", mx_strjoin(str3, str3)); //returns NULL
-}

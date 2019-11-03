@@ -1,7 +1,0 @@
-int main()
-{
-printf("%d\n", mx_get_substr_index("McDonalds", "Don")); //returns 2
-printf("%d\n", mx_get_substr_index("McDonalds", "Donatello")); //returns -1
-printf("%d\n", mx_get_substr_index("McDonalds", NULL)); //returns -2
-printf("%d\n", mx_get_substr_index(NULL, "Don")); //returns -2
-}

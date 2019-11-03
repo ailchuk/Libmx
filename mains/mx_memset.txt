@@ -1,7 +1,0 @@
-int main() 
-{
-    char arr[50];
-    strcpy(arr, "Helloooooo");
-    mx_memset(arr, 'c', 3);
-    puts(arr);
-}

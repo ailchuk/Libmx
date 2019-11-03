@@ -1,6 +1,0 @@
-
-int main()
-{
-    printf("%s\n", mx_memrchr("Trinity", 't', 7)); //returns "ity"
-    printf("%s\n", mx_memrchr("Trinity", 'M', 7)); //returns NULL
-}

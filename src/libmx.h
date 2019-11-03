@@ -82,6 +82,7 @@ void mx_push_back(t_list **list, void *data); // KK
 void mx_pop_front(t_list **head); // KK
 void mx_pop_back(t_list **head); // KK
 int mx_list_size(t_list *list); // KK 
-t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // CHECK!!!!
+t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // KK
+void mx_displaylist(t_list *list); // func to display all data from list
 
 #endif

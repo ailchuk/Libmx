@@ -1,8 +1,0 @@
-int main()
-{
-    char str[20], out[20];
-    strcpy(str, "hello there");
-    printf("%s\n", mx_memccpy(out, str, 'e', 20));
-    printf("%s\n", memccpy(out, str, 'e', 20));
-
-}
