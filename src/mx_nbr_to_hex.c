@@ -31,9 +31,3 @@ char *mx_nbr_to_hex(unsigned long nbr)
     }
     return res;
 }
-
-int main() 
-{
-    printf("%s\n", mx_nbr_to_hex(52)); //returns "34"
-    printf("%s\n", mx_nbr_to_hex(1000)); //returns "3e8"; //returns 0
-}

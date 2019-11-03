@@ -23,7 +23,7 @@ OBJDIR 	= obj/
 
 OBJ = $(addprefix $(OBJDIR), $(SRC:.c=.o))
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME): $(OBJDIR) $(OBJ)
 		@echo "\033[32mCreated...\033[0m"
@@ -37,11 +37,11 @@ $(OBJ): $(OBJDIR)%.o : $(SRCDIR)%.c
 	@$(CC) $(FLAGS) -I $(INC) -c $< -o $@
 
 clean:
-	@echo "\033[31mRemoved obj \033[0m"
+	@echo "\033[31mRemoved /obj/ \033[0m"
 	@rm -rf $(OBJDIR)
 
 uninstall: clean
-	@echo "\033[31mRemoved lib \033[0m"
+	@echo "\033[31mRemoved /lib.a/ \033[0m"
 	@rm -rf $(NAME)
 
 re: uninstall all

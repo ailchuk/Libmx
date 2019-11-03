@@ -15,7 +15,7 @@ bool mx_isspace(char c); // KK
 // UTILS pack
 
 void mx_printchar(char c); // KK
-// void mx_print_unicode(wchar_t c); // NONE
+void mx_print_unicode(wchar_t c); // KK
 void mx_printstr(const char *s); // KK
 void mx_print_strarr(char **arr, const char *delim); // #KK
 void mx_printint(int n);
