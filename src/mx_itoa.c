@@ -40,8 +40,3 @@ char *mx_itoa(int number)
     }
     return str;
 }
-
-int main()
-{
-    printf("%s\n", mx_itoa(-2147483648));
-}

@@ -19,13 +19,10 @@ char *mx_nbr_to_hex(unsigned long nbr)
     while (nbr > 0) 
     {
         int tmp = nbr % 16;
-
-        if (tmp < 10) {
+        if (tmp < 10)
             res[i] = tmp + '0';
-        }
-        else {
+        else
             res[i] = tmp + 87;
-        }
         nbr /= 16;
         i--;
     }
