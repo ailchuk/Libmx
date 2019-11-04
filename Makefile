@@ -1,4 +1,4 @@
-.PHONY:	all clean uninstall re
+.PHONY:	all install uninstall clean reinstall
 
 CC 		= clang
 
@@ -17,13 +17,13 @@ SRC 	= mx_isspace.c mx_printchar.c #mx_print_unicode.c # mx_printstr.c mx_print_
 		# mx_strstr.c mx_get_substr_index.c mx_count_substr.c mx_count_words.c mx_strtrim.c mx_del_extra_spaces.c \
 		# mx_strsplit.c mx_strjoin.c mx_file_to_str.c mx_read_line.c mx_replace_substr.c mx_memset.c mx_memcpy.c \
 		# mx_memccpy.c mx_memcmp.c mx_memchr.c mx_memmem.c mx_memmove.c mx_realloc.c mx_create_node.c mx_push_front.c \
-		# mx_push_back.c mx_pop_front.c mx_pop_back.c mx_list_size.c mx_sort_list.c 
+		# mx_push_back.c mx_pop_front.c mx_pop_back.c mx_list_size.c mx_sort_list.c mx_displaylist.c
 
 OBJDIR 	= obj/
 
 OBJ = $(addprefix $(OBJDIR), $(SRC:.c=.o))
 
-all: $(NAME) clean
+all: install uninstall
 
 $(NAME): $(OBJDIR) $(OBJ)
 		@echo "\033[32mCreated...\033[0m"
@@ -36,12 +36,14 @@ $(OBJDIR):
 $(OBJ): $(OBJDIR)%.o : $(SRCDIR)%.c
 	@$(CC) $(FLAGS) -I $(INC) -c $< -o $@
 
-clean:
+install: $(NAME)
+
+uninstall:
 	@echo "\033[31mRemoved /obj/ \033[0m"
 	@rm -rf $(OBJDIR)
 
-uninstall: clean
+clean:	uninstall
 	@echo "\033[31mRemoved /lib.a/ \033[0m"
 	@rm -rf $(NAME)
 
-re: uninstall all
+reinstall: uninstall install
