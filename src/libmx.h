@@ -10,7 +10,7 @@
 #include <malloc/malloc.h>
 #include <fcntl.h>
 
-bool mx_isspace(char c); // KK
+bool mx_isspace(char c);
 
 // UTILS pack
 
@@ -48,9 +48,9 @@ char *mx_strstr(const char *haystack, const char *needle); // +
 int mx_get_substr_index(const char *str, const char *sub); // +
 int mx_count_substr(const char *str, const char *sub); // +
 int mx_count_words(const char *str, char delimiter); // +
-char *mx_strtrim(const char *str); // + 4 leaks
-char *mx_del_extra_spaces(const char *str); // + 6 LEAKs!
-char **mx_strsplit(const char *s, char c); // #KK + 
+char *mx_strtrim(const char *str); // + 0 leaks
+char *mx_del_extra_spaces(const char *str); // + 1 leak check later!
+char **mx_strsplit(const char *s, char c); // + check
 char *mx_strjoin(const char *s1, const char *s2); // +
 char *mx_file_to_str(const char *file); // +
 // int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
@@ -65,7 +65,7 @@ int mx_memcmp(const void *s1, const void *s2, size_t n); // +
 void *mx_memchr(const void *s, int c, size_t n); // +
 void *mx_memrchr(const void *s, int c, size_t n); // +
 void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len); // ++
-void *mx_memmove(void *dst, const void *src, size_t len); // cheack !!!!!
+void *mx_memmove(void *dst, const void *src, size_t len); // check !!!!!
 void *mx_realloc(void *ptr, size_t size); // check it! 
 
 // #list pack
@@ -83,6 +83,6 @@ void mx_pop_front(t_list **head); // +
 void mx_pop_back(t_list **head); // +
 int mx_list_size(t_list *list); // +
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)); // +
-void mx_displaylist(t_list *list); // func to display all data from t_list
+void mx_displaylist(t_list *list); // displays all data from t_list
 
 #endif
