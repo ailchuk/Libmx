@@ -7,14 +7,14 @@ void mx_push_back(t_list **list, void *data)
     if (!new) return;
     t_list *last = *list;
     
+    new->data = data;
+    new->next = NULL;
     if (*list == NULL) {
 	    *list = new;
         return;
     }
-    else
-    {
-        while (last->next != NULL)
-            last = last->next;
-        last->next = new;
-    }
+    while (last->next != NULL)
+        last = last->next;
+    last->next = new;
+    return;
 }

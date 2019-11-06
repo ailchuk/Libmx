@@ -12,14 +12,3 @@ int mx_list_size(t_list *list)
     }
 	return size;
 }
-// Func to display node!!
-
-void display(t_list *head)
-{
-    while (head != NULL)
-    {
-        printf("%s   ", head->data);
-        head = head->next;
-    }
-    printf("\n");
-}

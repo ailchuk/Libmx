@@ -13,6 +13,7 @@ void mx_pop_front(t_list **head)
     else
     {
         t_list *ptr = (*head)->next;
+        (*head)->data = NULL;
         free(*head);
         *head = ptr;
     }
