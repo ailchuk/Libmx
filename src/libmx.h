@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <memory.h>
-#include <malloc/malloc.h>
+// #include <malloc/malloc.h>
 #include <fcntl.h>
 
 bool mx_isspace(char c);
@@ -53,7 +53,7 @@ char *mx_del_extra_spaces(const char *str); // + 1 leak check later!
 char **mx_strsplit(const char *s, char c); // + check
 char *mx_strjoin(const char *s1, const char *s2); // +
 char *mx_file_to_str(const char *file); // +
-// int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // NONE
+int mx_read_line(char **lineptr, int buf_size, int delim, const int fd); // 10 bts leak! but wors correct!!?
 char *mx_replace_substr(const char *str, const char *sub, const char *replace); // KK 2 leaks!!!
 
 // #memory pack
