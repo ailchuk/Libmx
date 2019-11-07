@@ -10,8 +10,6 @@
 // #include <malloc/malloc.h>
 #include <fcntl.h>
 
-bool mx_isspace(char c);
-
 // UTILS pack
 
 void mx_printchar(char c); // +
@@ -27,10 +25,12 @@ char *mx_itoa(int number); // +
 void mx_foreach(int *arr, int size, void (*f)(int)); // +
 int mx_binary_search(char **arr, int size, const char *s, int *count); // +
 int mx_bubble_sort(char **arr, int size); // +
-// int mx_quicksort(char **arr, int left, int right); // NONE
+int mx_quicksort(char **arr, int left, int right); // +
 
 // STRING pack 
 
+
+bool mx_isspace(char c);
 int mx_strlen(const char *s); // +
 void mx_swap_char(char *s1, char *s2); // +
 void mx_str_reverse(char *s); // +
