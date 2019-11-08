@@ -22,7 +22,8 @@ char *mx_itoa(int number)
     long long int n = number;
     size_t len = i_len(n);
     char *str = mx_strnew(len);
-    if (!str) return 0;
+    if (!str)
+        return 0;
     str[len] = '\0';
     if (number == -2147483648)
         return mx_strdup("-2147483648");
@@ -39,9 +40,4 @@ char *mx_itoa(int number)
         n /= 10;
     }
     return str;
-}
-
-int main()
-{
-    printf("%s\n", mx_itoa(323));
 }

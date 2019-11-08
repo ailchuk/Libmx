@@ -13,7 +13,5 @@ char *mx_strtrim(const char *str)
     }
     char *dst = mx_strnew(len);
     mx_strncpy(dst, str, len);
-    char *p = dst;
-    free(dst);
-    return p;
+    return dst;
 }

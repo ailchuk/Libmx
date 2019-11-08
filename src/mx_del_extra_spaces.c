@@ -1,27 +1,28 @@
 #include "libmx.h"
 
-static bool is_extra_space(int c)
-{
-	return (c > 8 && c < 14);
-}
-char *mx_del_extra_spaces(const char *str)
-{
-	char *tmp_str = mx_strnew(mx_strlen(str));
-    char *res = NULL;
+char *mx_del_extra_spaces(const char *str) {
+    if (!str)
+	    return NULL;
+    char *s1 = mx_strtrim(str);
+    char *s2 = mx_strtrim(str);
+    char *result = NULL;
+    int i = 0; 
+    int j = 0;            
 
-    for (int i = 0, j = 0; str[i] != '\0'; tmp_str[j] = str[i], ++i, ++j)
-        if (is_extra_space(str[i]) || mx_isspace(str[i]))
-            for (tmp_str[j] = ' '; mx_isspace(str[i + 1]); ++i);
-    res = mx_strtrim(tmp_str);
-    return res;
-}
-
-int main()
-{
-    // char *name = "                  \f \n \f \r     ";
-	char *name = "\f My name... is \r Neo \t\n ";
-    printf("%s", mx_del_extra_spaces(name)); //returns "My name... is Neo" 
-    //char *arr = mx_del_extra_spaces(name);
-    //printf("%s", arr);
-	system("leaks a.out");
+    while (s1[i]) {
+	    if (!mx_isspace(s1[i])) {
+	        s2[j] = s1[i];
+	        j++;
+        } else if (mx_isspace(s1[i]) && !mx_isspace(s1[i + 1])) {
+  	        s2[j] = s1[i];
+            j++;
+        }
+        i++;
+    }
+    s2[j] = '\0';
+    result = mx_strnew(mx_strlen(s2));
+    mx_strncpy(result, s2, mx_strlen(s2));
+    mx_strdel(&s1);
+    mx_strdel(&s2);
+    return result;
 }

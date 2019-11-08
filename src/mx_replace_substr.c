@@ -1,33 +1,33 @@
 #include "libmx.h"
 
-char *mx_replace_substr(const char *str, const char *sub, const char *replace)
-{
-    int count = mx_count_substr(str, sub);
-    int len = mx_strlen(str) - (mx_strlen(sub) * count) + (mx_strlen(replace) * count);
-    char *tmp_str = mx_strnew(len);
-    char *p_tmp = tmp_str;
+char *mx_replace_substr(const char *str, const char *sub, const char *replace) {
+    if (!str || !sub || !replace)
+        return NULL;
+    char *res;
+    int i = 0, count = 0;
+    size_t rep_len = mx_strlen(replace);
+    size_t sub_len = mx_strlen(sub);
 
-    while (*str != '\0')
-    {
-        if (str != mx_strstr(str, sub))
-        {
-            *tmp_str = *str;
-            str++;
-            tmp_str++;
-        }
-        if (str == mx_strstr(str, sub))
-        {
-            mx_strncpy(tmp_str, replace, mx_strlen(replace));
-            tmp_str += mx_strlen(replace);
-            str += mx_strlen(sub);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (mx_strstr(&str[i], replace) == &str[i]) {
+            count++;
+            i += sub_len - 1;
         }
     }
-    return p_tmp;
-}
-
-int main()
-{
-    printf("%s\n", mx_replace_substr("McDonalds", "alds", "uts")); //returns "McDonuts"
-    printf("%s\n", mx_replace_substr("Ururu turu", "ru", "ta")); //returns "Utata tuta"
-    system("leaks a.out");
+    res = malloc(i + count * (rep_len - sub_len));
+    if (!res)
+        return NULL;
+    i = 0;
+    while (*str) {
+        if (mx_strstr(str, sub) == str) {
+            mx_strcpy(&res[i], replace);
+            i += rep_len;
+            str += sub_len;
+        } 
+        else {
+            res[i++] = *str++;
+        }
+    }
+    res[i] = '\0';
+    return res;
 }
