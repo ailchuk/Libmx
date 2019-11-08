@@ -27,16 +27,3 @@ int mx_read_line(char **lineptr, int buf_size, int delim, const int fd)
     }
     return j;
 }
-
-int main() {
-    int fd = open("1", O_RDONLY);
-    char *line;
-    int buf_size = 4;
-    int delim = '.';
-    int k = mx_read_line(&line, buf_size, delim, fd);
-    printf("%d\n", k);
-    // printf("%s", line);
-    close(fd);
-    return 0;
-}
-
