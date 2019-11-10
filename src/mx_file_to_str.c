@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-char *mx_file_to_str(const char *file)
-{
+char *mx_file_to_str(const char *file) {
     char buf[1];
     char *str;
     int len = 0;
