@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-char *mx_strcat(char *restrict s1, const char *restrict s2)
-{   
+char *mx_strcat(char *restrict s1, const char *restrict s2) {   
     if (!s1 || !s2) return NULL;
     int i = mx_strlen(s1);
 
