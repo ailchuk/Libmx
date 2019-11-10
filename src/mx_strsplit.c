@@ -11,9 +11,9 @@ char **mx_strsplit(const char *s, char c) {
     char **arr = malloc((sizeof(char *) * (size_arr + 1)));
     
     if (size_arr == 1) {
-        result[0] = mx_strdup(s);
-        result[1] = NULL;
-        return result;
+        arr[0] = mx_strdup(s);
+        arr[1] = NULL;
+        return arr;
     }
     for (int i = 0; i < len; i++) {
         id = mx_get_char_index(s, c);
