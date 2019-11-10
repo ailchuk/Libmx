@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-char *mx_strnew(const int size)
-{
+char *mx_strnew(const int size) {
     char *str = NULL;
 
     if (size < 0)
