@@ -10,11 +10,12 @@ char *mx_del_extra_spaces(const char *str) {
     int j = 0;            
 
     while (s1[i]) {
-	    if (!mx_isspace(s1[i])) {
-	        s2[j] = s1[i];
-	        j++;
-        } else if (mx_isspace(s1[i]) && !mx_isspace(s1[i + 1])) {
-  	        s2[j] = s1[i];
+        if (!mx_isspace(s1[i])) {
+            s2[j] = s1[i];
+	    j++;
+        } 
+	else if (mx_isspace(s1[i]) && !mx_isspace(s1[i + 1])) {
+  	    s2[j] = s1[i];
             j++;
         }
         i++;
