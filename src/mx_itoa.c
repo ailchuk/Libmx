@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-static int i_len(int n)
-{
+static int i_len(int n) {
     int i = 0;
 
     if (n < 0) {
