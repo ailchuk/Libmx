@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <memory.h>
-#include <malloc/malloc.h>
+#include <malloc.h>
 #include <fcntl.h>
 
 // UTILS pack
@@ -22,7 +22,6 @@ int mx_sqrt(int x);
 char *mx_nbr_to_hex(unsigned long nbr);
 unsigned long mx_hex_to_nbr(const char *hex);
 char *mx_itoa(int number);
-int mx_atoi(const char *str);
 void mx_foreach(int *arr, int size, void (*f)(int));
 int mx_binary_search(char **arr, int size, const char *s, int *count);
 int mx_bubble_sort(char **arr, int size);
@@ -30,7 +29,6 @@ int mx_quicksort(char **arr, int left, int right);
 
 // STRING pack 
 
-bool mx_isdigit(int c);
 bool mx_isspace(char c);
 int mx_strlen(const char *s);
 void mx_swap_char(char *s1, char *s2);
@@ -85,5 +83,9 @@ void mx_pop_back(t_list **head);
 int mx_list_size(t_list *list);
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *));
 void mx_displaylist(t_list *list);
+
+// new
+int mx_atoi(const char *str);
+bool mx_isdigit(int c);
 
 #endif
