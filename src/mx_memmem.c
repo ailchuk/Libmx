@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len)
-{
+void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len) {
     const char *cur;
     const char *last;
 	const char *str1 = big;
@@ -9,10 +8,8 @@ void *mx_memmem(const void *big, size_t big_len, const void *little, size_t litt
 
 	if (little_len == 0)
 		return (void *)str1;
-
 	if (big_len < little_len)
 		return NULL;
-
 	if (little_len == 1)
 		return mx_memchr(big, *str2, big_len);
 
