@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-int mx_read_line(char **lineptr, int buf_size, int delim, const int fd)
-{
+int mx_read_line(char **lineptr, int buf_size, int delim, const int fd) {
     if (fd < 0 || buf_size <= 0 || read(fd, 0, 0) < 0)
         return -1;
     *lineptr = mx_strnew(buf_size);
