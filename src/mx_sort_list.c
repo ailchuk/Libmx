@@ -14,8 +14,8 @@ t_list *mx_sort_list(t_list *list, bool (*cmp)(void *a, void *b)) {
         while(head) {
             if(head->next && cmp(head->data,head->next->data))
                 swap(&head->data, &head->next->data);
-        head = head->next;
-    }
+            head = head->next;
+        }
         list = list->next;
     }
     return tmp;
