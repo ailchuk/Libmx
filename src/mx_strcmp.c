@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-int mx_strcmp(const char *s1, const char *s2)
-{
+int mx_strcmp(const char *s1, const char *s2) {
 	unsigned char *str1 = (unsigned char *)s1;
 	unsigned char *str2 = (unsigned char *)s2;
 	int i = 0;
