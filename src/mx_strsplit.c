@@ -1,14 +1,20 @@
 #include "libmx.h"
 
 char **mx_strsplit(const char *s, char c) {
-    if (!s || mx_get_char_index(s, c) == -1)
+    if (!s)
         return NULL;
 
     int size_arr = mx_count_words(s, c);
-    char **arr = malloc((sizeof(char *) * (size_arr + 1)));
     int len = mx_strlen(s);
     int id = 0;
     int j = 0;
+    char **arr = malloc((sizeof(char *) * (size_arr + 1)));
+    
+    if (size_arr == 1) {
+        result[0] = mx_strdup(s);
+        result[1] = NULL;
+        return result;
+    }
     for (int i = 0; i < len; i++) {
         id = mx_get_char_index(s, c);
         id = id == -1 ? mx_strlen(s) : id;
