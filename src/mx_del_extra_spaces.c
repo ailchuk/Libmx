@@ -2,7 +2,7 @@
 
 char *mx_del_extra_spaces(const char *str) {
     if (!str)
-	    return NULL;
+        return NULL;
     char *s1 = mx_strtrim(str);
     char *s2 = mx_strtrim(str);
     char *result = NULL;
