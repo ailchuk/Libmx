@@ -1,7 +1,6 @@
 #include "libmx.h"
 
-int mx_count_substr(const char *str, const char *sub)
-{
+int mx_count_substr(const char *str, const char *sub) {
     if (!str || !sub)
         return -1;
     int len = mx_strlen(sub);
