@@ -1,2 +1,2 @@
-# Libmx_ucode
-UNIT factory - #ucode. Thread C - my library.
+# Libmx 
+Libmx is an individual project that requires us to re-create some standard C library functions including some additional ones that can be used later to build a library of useful functions for the rest of the program.
